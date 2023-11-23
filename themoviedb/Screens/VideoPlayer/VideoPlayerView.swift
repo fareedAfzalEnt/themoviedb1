@@ -50,6 +50,10 @@ struct VideoPlayerView: View {
             self.player.play()
             self.isplaying = true
         }
+        .onDisappear {
+            self.player.pause()
+            self.isplaying = false
+        }
     }
     // Observe changes to the player's timeControlStatus
     func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
